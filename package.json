@@ -1,0 +1,31 @@
+{
+  "name": "shop-backend",
+  "version": "0.0.1",
+  "description": "wechat shop backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env NODE_ENV=development nodemon index.js"
+  },
+  "keywords": [
+    "wechat",
+    "shop",
+    "backend"
+  ],
+  "author": "luzuoquan",
+  "license": "MIT",
+  "dependencies": {
+    "cross-env": "^5.0.5",
+    "koa": "^2.3.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-router": "^7.2.1",
+    "mysql2": "^1.4.2",
+    "node-fetch": "^1.7.3",
+    "nodemon": "^1.12.1",
+    "sequelize": "^4.10.0"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.0",
+    "babel-register": "^6.26.0"
+  }
+}

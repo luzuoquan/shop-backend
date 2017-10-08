@@ -1,0 +1,23 @@
+{
+	"development": {
+		"database": "shop",
+		"username": "root",
+		"password": "Luzuoquan2013",
+		"option": {
+			"host": "127.0.0.1",
+			"dialect": "mysql",
+			"pool": {
+				"max": 5,
+    		"min": 0,
+    		"idle": 10000
+			},
+			"sync": {
+				"force": false
+			},
+			"timezone": "+08:00"
+		}
+	},
+	"production": {
+
+	}
+}
