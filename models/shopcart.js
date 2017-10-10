@@ -1,5 +1,5 @@
-import Sequelize from 'sequelize';
-import sequelize from '../db';
+import Sequelize from 'sequelize'
+import sequelize from '../db'
 
 export default sequelize.define('shopcart', {
   id: {
@@ -19,4 +19,7 @@ export default sequelize.define('shopcart', {
     type: Sequelize.STRING,
     allowNull: false
   }
-});
+}, {
+  tableName: 'shopcart',
+  engine: 'InnoDB'
+})
