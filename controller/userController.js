@@ -10,7 +10,7 @@ export default class UserController {
 			});
 		const result = {
 			code: 200,
-			success: true, 
+			success: true,
 			result: {
 				openid: ctx.openId,
 				sessionKey: ctx.sessionKey
@@ -27,7 +27,7 @@ export default class UserController {
 			})
 		ctx.openId = wxRes['openid'];
 		ctx.sessionKey = wxRes['session_key'];
-		await next();	
+		await next();
 	}
 	async test(ctx) {
 		console.info(ctx.openId)
