@@ -27,10 +27,8 @@ export default class ShopcartController {
 
     const result = {
       code: 200,
-      success: true,
-      result: {
-        shopcart: newShopcart
-      }
+      success: newShopcart,
+      result: null
     }
     ctx.body = result
   }
