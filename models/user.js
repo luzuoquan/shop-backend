@@ -1,5 +1,5 @@
-import Sequelize from 'sequelize';
-import sequelize from '../db';
+import Sequelize from 'sequelize'
+import sequelize from '../db'
 
 const User = sequelize.define('user', {
 	id: {
@@ -17,4 +17,4 @@ const User = sequelize.define('user', {
 	tableName: 'user',
 	engine: 'InnoDB'
 })
-export default User;
+export default User
