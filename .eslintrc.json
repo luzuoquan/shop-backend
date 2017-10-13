@@ -40,7 +40,7 @@
         "no-console": [
             "error",
             {
-                "allow": ["warn", "error", "log"]
+                "allow": ["warn", "error", "log", "info"]
             }
         ],
         "semi": [

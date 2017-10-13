@@ -26,4 +26,6 @@ router.get('/order', orderController.query)
 
 router.post('/order/insert', orderController.insert)
 
+router.get('/test', orderController.prePay)
+
 export default router
