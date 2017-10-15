@@ -51,9 +51,11 @@ export default class ProductController {
   }
   async queryOne(ctx) {
     const product = await Product.findOne({
-      productId: ctx.params.productId
+      where: {
+        productId: ctx.params.productId
+      }
     })
-
+    
     const result = {
       code: 200,
       success: 'success',

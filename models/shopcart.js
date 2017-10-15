@@ -22,6 +22,11 @@ export default sequelize.define('shopcart', {
   },
   openId: {
     type: Sequelize.STRING,
+    allowNull: false,
+    comment: '用户唯一标志'
+  },
+  thumbnails: {
+    type: Sequelize.STRING,
     allowNull: false
   }
 }, {

@@ -9,7 +9,7 @@ export default class UserController {
     const userinfo = await User.upsert({
       openId: ctx.openId,
       sessionKey: ctx.sessionKey,
-      uuid: uuidV4()
+      uuid: clientUuid
     })
     const result = {
       code: 200,

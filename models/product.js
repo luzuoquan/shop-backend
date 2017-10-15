@@ -31,7 +31,7 @@ export default sequelize.define('product', {
   imageUrl: {
     type: Sequelize.STRING,
     allowNull: false,
-    comment: '库存'
+    comment: '图片'
   }
 }, {
   tableName: 'product',

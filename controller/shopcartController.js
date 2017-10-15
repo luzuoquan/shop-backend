@@ -1,12 +1,22 @@
 import Shopcart from '../models/shopcart'
+import User from '../models/user'
+// import Product from '../models/product'
+
+// Shopcart.hasOne(Product)
 
 export default class ShopcartController {
   async query(ctx) {
-    const shopcart = await Shopcart.findAll({
+    const user = await User.findOne({
       where: {
-        openId: ctx.params.openId
+        uuid: ctx.params.uuid
       }
     })
+    const shopcart = await Shopcart.findAll({
+      where: {
+        openId: user.get('openId')
+      }
+    })
+
     const result = {
       code: 200,
       success: true,
@@ -18,11 +28,16 @@ export default class ShopcartController {
   }
   async insert(ctx) {
     const reqBody = ctx.request.body
-
+    const user = await User.findOne({
+      where: {
+        uuid: reqBody.uuid
+      }
+    })
     const newShopcart = await Shopcart.upsert({
       productId: reqBody.productId,
       productAccount: reqBody.productAccount,
-      openId: reqBody.openId
+      openId: user.get('openId'),
+      thumbnails: reqBody.thumbnails
     })
 
     const result = {

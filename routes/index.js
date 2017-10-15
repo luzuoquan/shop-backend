@@ -14,9 +14,9 @@ const router = new Router({prefix: `/${baseApi}`})
 
 router.get('/login/:code', userController.wxLogin, userController.upsert)
 
-router.get('/shopcart/:openId', shopcartController.query)
+router.get('/shopcart/:uuid', shopcartController.query)
 
-router.post('/shopcart/insert', shopcartController.insert)
+router.post('/shopcart', shopcartController.insert)
 
 router.get('/product', productController.query)
 
@@ -26,7 +26,7 @@ router.get('/product/banner', productController.bannerQuery)
 
 router.get('/order', orderController.query)
 
-router.post('/order/insert', orderController.insert)
+router.post('/order', orderController.insert)
 
 router.post('/product', productController.insert)
 
