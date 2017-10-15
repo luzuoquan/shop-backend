@@ -20,11 +20,15 @@ router.post('/shopcart/insert', shopcartController.insert)
 
 router.get('/product', productController.query)
 
+router.get('/product/:productId', productController.queryOne)
+
 router.get('/product/banner', productController.bannerQuery)
 
 router.get('/order', orderController.query)
 
 router.post('/order/insert', orderController.insert)
+
+router.post('/product', productController.insert)
 
 router.get('/test', orderController.prePay)
 
