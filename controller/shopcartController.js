@@ -1,8 +1,8 @@
 import Shopcart from '../models/shopcart'
 import User from '../models/user'
-// import Product from '../models/product'
+import Product from '../models/product'
 
-// Shopcart.hasOne(Product)
+Shopcart.belongsTo(Product, {foreignKey: 'productId'})
 
 export default class ShopcartController {
   async query(ctx) {
@@ -14,7 +14,14 @@ export default class ShopcartController {
     const shopcart = await Shopcart.findAll({
       where: {
         openId: user.get('openId')
-      }
+      },
+      attributes: {
+        exclude: 'openId'
+      },
+      include: [{
+        model: Product,
+
+      }]
     })
 
     const result = {

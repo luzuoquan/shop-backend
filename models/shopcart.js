@@ -1,6 +1,5 @@
 import Sequelize from 'sequelize'
 import sequelize from '../db'
-import Product from './product'
 
 export default sequelize.define('shopcart', {
   id: {
@@ -11,10 +10,7 @@ export default sequelize.define('shopcart', {
   productId: {
     type: Sequelize.STRING,
     allowNull: false,
-    references: {
-      model: Product,
-      key: 'productId'
-    }
+    comment: '商品id'
   },
   productAccount: {
     type: Sequelize.INTEGER(20),
