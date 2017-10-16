@@ -19,8 +19,7 @@ export default class ShopcartController {
         exclude: 'openId'
       },
       include: [{
-        model: Product,
-
+        model: Product
       }]
     })
 
