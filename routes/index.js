@@ -4,11 +4,13 @@ import UserController from '../controller/userController'
 import ShopcartController from '../controller/shopcartController'
 import ProductController from '../controller/productController'
 import OrderController from '../controller/orderController'
+import UserInfoController from '../controller/userInfoController'
 
 const userController = new UserController()
 const shopcartController = new ShopcartController()
 const productController = new ProductController()
 const orderController = new OrderController()
+const userInfoController = new UserInfoController()
 
 const router = new Router({prefix: `/${baseApi}`})
 
@@ -29,6 +31,8 @@ router.get('/order', orderController.query)
 router.post('/order', orderController.insert)
 
 router.post('/product', productController.insert)
+
+router.post('/userInfo/address', userInfoController.insertAddress)
 
 router.get('/test', orderController.prePay)
 

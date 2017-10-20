@@ -11,7 +11,6 @@ export default class ShopcartController {
         uuid: ctx.params.uuid
       }
     })
-    console.info(user)
     const shopcart = await Shopcart.findAll({
       where: {
         openId: user.get('openId')

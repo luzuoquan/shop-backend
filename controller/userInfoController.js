@@ -22,7 +22,29 @@ export default class UserInfoController {
     }
     ctx.body = result
   }
-  async insert(ctx) {
+  async insertAddress(ctx) {
+    const reqBody = ctx.request.body
+    let insertResult
+    const user = await User.findOne({
+      where: {
+        uuid: reqBody.uuid
+      }
+    })
 
+    if (user) {
+      insertResult = await UserInfo.upsert({
+        openId: user.get('openId'),
+        address: reqBody.address
+      })
+    } else {
+      insertResult = false
+    }
+
+    const result = {
+      code: 200,
+      success: insertResult,
+      result: null
+    }
+    ctx.body = result
   }
 }

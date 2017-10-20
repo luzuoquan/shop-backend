@@ -1,7 +1,7 @@
 import Sequelize from 'sequelize'
 import sequelize from '../db'
 
-const UserInfo = sequelize.define('user', {
+const UserInfo = sequelize.define('userInfo', {
   id: {
     type: Sequelize.INTEGER(20),
     primaryKey: true,
@@ -15,7 +15,7 @@ const UserInfo = sequelize.define('user', {
     type: Sequelize.STRING
   }
 }, {
-  tableName: 'user',
+  tableName: 'userInfo',
   engine: 'InnoDB'
 })
 export default UserInfo

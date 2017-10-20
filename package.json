@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "cross-env NODE_ENV=development nodemon index.js"
+    "dev": "cross-env NODE_ENV=development nodemon index.js",
+    "build": "cross-env NODE_ENV=development rimraf -rf dist/* && node webpack.server.config.js",
+    "deploy": "cross-env NODE_ENV=development node dist/index.bundle.js"
   },
   "keywords": [
     "wechat",
@@ -25,10 +27,14 @@
     "mysql2": "^1.4.2",
     "node-fetch": "^1.7.3",
     "nodemon": "^1.12.1",
+    "rimraf": "^2.6.2",
     "sequelize": "^4.10.0",
-    "uuid": "^3.1.0"
+    "uuid": "^3.1.0",
+    "webpack": "^3.8.1"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
     "babel-register": "^6.26.0",
     "eslint": "^4.8.0",
