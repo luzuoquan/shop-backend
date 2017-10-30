@@ -32,6 +32,8 @@ router.post('/order', orderController.insert)
 
 router.post('/product', productController.insert)
 
+router.get('/userInfo/address/:uuid', userInfoController.query)
+
 router.post('/userInfo/address', userInfoController.insertAddress)
 
 router.get('/test', orderController.prePay)

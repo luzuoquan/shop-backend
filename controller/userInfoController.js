@@ -3,21 +3,28 @@ import User from '../models/user'
 
 export default class UserInfoController {
   async query(ctx) {
+    let insertResult
     const user = await User.findOne({
       where: {
         uuid: ctx.params.uuid
       }
     })
-    const userInfo = await UserInfo.findAll({
-      where: {
-        openId: user.get('openId')
-      }
-    })
+
+    if (user) {
+      insertResult = await UserInfo.findAll({
+        where: {
+          openId: user.get('openId')
+        }
+      })
+    } else {
+      insertResult = null
+    }
+
     const result = {
       code: 200,
       success: true,
       result: {
-        userInfo: userInfo
+        userInfo: insertResult
       }
     }
     ctx.body = result

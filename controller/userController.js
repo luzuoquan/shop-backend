@@ -6,14 +6,14 @@ import { appid, secret, wxApiUrl} from '../config'
 export default class UserController {
   async upsert(ctx) {
     const clientUuid = uuidV4()
-    const userinfo = await User.upsert({
+    await User.upsert({
       openId: ctx.openId,
       sessionKey: ctx.sessionKey,
       uuid: clientUuid
     })
     const result = {
       code: 200,
-      success: userinfo,
+      success: true,
       result: {
         uuid: clientUuid
       }
