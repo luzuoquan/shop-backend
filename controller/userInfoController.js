@@ -11,7 +11,7 @@ export default class UserInfoController {
     })
 
     if (user) {
-      insertResult = await UserInfo.findAll({
+      insertResult = await UserInfo.findOne({
         where: {
           openId: user.get('openId')
         }
@@ -23,9 +23,7 @@ export default class UserInfoController {
     const result = {
       code: 200,
       success: true,
-      result: {
-        userInfo: insertResult
-      }
+      result: insertResult
     }
     ctx.body = result
   }
@@ -49,7 +47,7 @@ export default class UserInfoController {
 
     const result = {
       code: 200,
-      success: insertResult,
+      success: typeof insertResult === 'boolean',
       result: null
     }
     ctx.body = result
